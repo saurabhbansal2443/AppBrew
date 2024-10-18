@@ -1,0 +1,28 @@
+query getCustomer($customerAccessToken : String!) {
+  customer(customerAccessToken :$customerAccessToken){
+    acceptsMarketing
+    firstName
+    lastName
+    email 
+    phone
+  }
+}
+
+// input 
+
+# {"customerAccessToken": "54ffcbb1ffe1a810d63f5d8e883e3037"
+# }
+
+//output 
+
+# {
+#   "data": {
+#     "customer": {
+#       "acceptsMarketing": true,
+#       "firstName": "saurabh",
+#       "lastName": "bansal",
+#       "email": "sbansal24@gmail.com",
+#       "phone": null
+#     }
+#   }
+# }

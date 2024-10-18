@@ -1,0 +1,46 @@
+mutation customerUpdate ($customer : CustomerUpdateInput! , $customerAccessToken :String! ){
+  	customerUpdate(customer :$customer , customerAccessToken :$customerAccessToken){
+    	customer{
+        acceptsMarketing
+        firstName
+        lastName
+        email 
+        phone
+      }
+    customerUserErrors{
+      code 
+      field 
+      message
+    }
+  }	
+}
+
+// input 
+//note - make sure the phone number is with country code and unique 
+# {
+#   "customer": {
+#     "acceptsMarketing": false,
+#     "firstName" :"Elon",
+#     "lastName": "Musk",
+#     "phone" : "+919213949509"
+   
+#   },
+#   "customerAccessToken": "54ffcbb1ffe1a810d63f5d8e883e3037"
+# }
+
+//output 
+
+# {
+#   "data": {
+#     "customerUpdate": {
+#       "customer": {
+#         "acceptsMarketing": false,
+#         "firstName": "Elon",
+#         "lastName": "Musk",
+#         "email": "sbansal24@gmail.com",
+#         "phone": "+919213949509"
+#       },
+#       "customerUserErrors": []
+#     }
+#   }
+# }

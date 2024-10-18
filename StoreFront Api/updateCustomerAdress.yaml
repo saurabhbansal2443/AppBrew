@@ -1,0 +1,40 @@
+mutation customerAddressUpdate($address : MailingAddressInput! , $customerAccessToken :String! , $id : ID! ){
+    customerAddressUpdate(address : $address , customerAccessToken :$customerAccessToken , id :$id ){
+    customerAddress{
+      address1
+      address2
+      city 
+      company
+    }
+    customerUserErrors{
+      code 
+      field 
+      message
+    }
+  }
+}
+
+
+//input 
+# {"address": {
+#   "address1":  "D-18",
+#   "address2": "rohini Sector 1 "
+# },
+#   "customerAccessToken": "54ffcbb1ffe1a810d63f5d8e883e3037",
+#   "id":"gid://shopify/MailingAddress/9024482508997?model_name=CustomerAddress&customer_access_token=9kRqbPQm69wJRxYF1UOwVJD7LDKiAtc_tQpQsPkwswdsbQBK2TylNUqKWAqo3SybuzO8Vh5ctaN0AW4um7LGCWIWHj6UCgQvOKN7yUJ7hlOBq-aIaXWi9rY23l0Q0wJGMleM139W228z8OPCghBhhsDMvMpIHrRY_bl0ruiNXMoJhL-uj9ROgJ94XnnB7c1FkO7kCkRvoVkX6mL6jKqXnj-a6nmlaJSHUJaBVVg56K0P2YJ7uc91OhBzXZuKM4Ut"
+# }
+
+// Note - this id  I have got from getCustomer data Query
+#  {
+# query getCustomer($customerAccessToken : String!) {
+#   customer(customerAccessToken :$customerAccessToken){
+#     addresses(first : 10 ){
+#       nodes{
+#         id 
+#       }
+#     }
+#   }
+# }
+# }
+
+

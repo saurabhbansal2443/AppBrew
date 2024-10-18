@@ -1,0 +1,47 @@
+mutation customerAddressCreate($address: MailingAddressInput!, $customerAccessToken: String!) {
+  customerAddressCreate(address: $address, customerAccessToken: $customerAccessToken) {
+    customerAddress {
+      address1
+      address2
+      city
+      company
+      country
+    }
+    customerUserErrors {
+      field
+      message
+      code
+    }
+    
+  }
+}
+
+
+//input 
+
+# { "address": {
+#   "address1": "f1/27",
+#   "address2": "Rohini",
+#   "city": "Delhi",
+#   "company":"AppBrew",
+#    "country": "India"
+# },
+#   "customerAccessToken": "54ffcbb1ffe1a810d63f5d8e883e3037"
+# }
+
+//output 
+
+# {
+#   "data": {
+#     "customerAddressCreate": {
+#       "customerAddress": {
+#         "address1": "f1/27",
+#         "address2": "Rohini",
+#         "city": "Delhi",
+#         "company": "AppBrew",
+#         "country": "India"
+#       },
+#       "customerUserErrors": []
+#     }
+#   }
+# }

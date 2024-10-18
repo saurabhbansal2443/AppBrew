@@ -1,0 +1,26 @@
+mutation customerAddressDelete($customerAccessToken :String! , $id:ID!){
+  customerAddressDelete(customerAccessToken : $customerAccessToken , id :$id){
+    customerUserErrors{
+      code
+      field
+      message 
+    }
+  }
+}
+
+//input 
+
+# {
+#   "customerAccessToken": "54ffcbb1ffe1a810d63f5d8e883e3037",
+#   "id":"gid://shopify/MailingAddress/9024482508997?model_name=CustomerAddress&customer_access_token=9kRqbPQm69wJRxYF1UOwVJD7LDKiAtc_tQpQsPkwswdsbQBK2TylNUqKWAqo3SybuzO8Vh5ctaN0AW4um7LGCWIWHj6UCgQvOKN7yUJ7hlOBq-aIaXWi9rY23l0Q0wJGMleM139W228z8OPCghBhhsDMvMpIHrRY_bl0ruiNXMoJhL-uj9ROgJ94XnnB7c1FkO7kCkRvoVkX6mL6jKqXnj-a6nmlaJSHUJaBVVg56K0P2YJ7uc91OhBzXZuKM4Ut"
+# }
+
+# // output 
+
+# {
+#   "data": {
+#     "customerAddressDelete": {
+#       "customerUserErrors": []
+#     }
+#   }
+# }

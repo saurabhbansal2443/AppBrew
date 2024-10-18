@@ -1,0 +1,70 @@
+mutation customerCreate($input : CustomerCreateInput!){
+  customerCreate(input :$input){
+  customer {
+    firstName
+    lastName
+    acceptsMarketing
+    email 
+    phone 
+  }
+  customerUserErrors{
+    field 
+    message 
+    code 
+  }
+  }
+}
+
+// input 
+
+
+# {
+#   "input":{
+#     "email": "sbansal24@gmail.com",
+#     "password" :"saurabh@123",
+#     "firstName" :"saurabh",
+#     "lastName" :"bansal",
+#     "acceptsMarketing": true
+#   }
+# }
+
+// output 
+
+# {
+#   "data": {
+#     "customerCreate": {
+#       "customer": {
+#         "firstName": "saurabh",
+#         "lastName": "bansal",
+#         "acceptsMarketing": true,
+#         "email": "sbansal24@gmail.com",
+#         "phone": null
+#       },
+#       "customerUserErrors": []
+#     }
+#   }
+# }
+
+
+
+mutation customerCreate($input : CustomerCreateInput!){
+  customerCreate(input :$input){
+  customer {
+    firstName
+    lastName
+    acceptsMarketing
+    addresses(first :2 ){
+      nodes{
+        address1 
+        address2
+        city 
+      }
+    }
+    email 
+    phone 
+  }
+  customerUserErrors{
+    field 
+    message 
+    code 
+  }

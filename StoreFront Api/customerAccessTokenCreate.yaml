@@ -1,0 +1,56 @@
+
+mutation customerAccessTokenCreate($input : CustomerAccessTokenCreateInput! ){
+  customerAccessTokenCreate(input :$input){
+    customerAccessToken{
+      accessToken
+      expiresAt
+    }
+    customerUserErrors{
+      code 
+      field 
+      message
+    }
+  }
+}
+
+
+
+//input 
+
+# {"input": {
+#   "email": "sbansal24@gmail.com",
+#   "password": "saurabh@123"
+# }
+# }
+
+//output 
+
+# {
+#   "data": {
+#     "customerAccessTokenCreate": {
+#       "customerAccessToken": {
+#         "accessToken": "54ffcbb1ffe1a810d63f5d8e883e3037",
+#         "expiresAt": "2024-11-27T09:37:37Z"
+#       },
+#       "customerUserErrors": []
+#     }
+#   }
+# }
+
+
+//Note - this will only work for the customer which are created else it will give this message 
+
+# {
+#   "data": {
+#     "customerAccessTokenCreate": {
+#       "customerAccessToken": null,
+#       "customerUserErrors": [
+#         {
+#           "code": "UNIDENTIFIED_CUSTOMER",
+#           "field": null,
+#           "message": "Unidentified customer"
+#         }
+#       ]
+#     }
+#   }
+# }

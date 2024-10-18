@@ -1,0 +1,95 @@
+query getCollections($first :Int){
+  collections(first :$first ){
+    edges{
+      cursor 
+      node{
+       handle 
+        products (first :5 ){
+          edges {
+            node {
+              title 
+						}
+          }
+        }
+      }
+			}
+  }
+}
+
+# //input 
+
+# { 
+# "first" : 2 
+# }
+
+# //output 
+
+# {
+#   "data": {
+#     "collections": {
+#       "edges": [
+#         {
+#           "cursor": "eyJsYXN0X2lkIjozMTE1NjMwMjY2MjksImxhc3RfdmFsdWUiOiIzMTE1NjMwMjY2MjkifQ==",
+#           "node": {
+#             "handle": "frontpage",
+#             "products": {
+#               "edges": [
+#                 {
+#                   "node": {
+#                     "title": "The Minimal Snowboard"
+#                   }
+#                 }
+#               ]
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjozMTE1NjMxMjQ5MzMsImxhc3RfdmFsdWUiOiIzMTE1NjMxMjQ5MzMifQ==",
+#           "node": {
+#             "handle": "automated-collection",
+#             "products": {
+#               "edges": [
+#                 {
+#                   "node": {
+#                     "title": "The Collection Snowboard: Liquid"
+#                   }
+#                 },
+#                 {
+#                   "node": {
+#                     "title": "The Multi-managed Snowboard"
+#                   }
+#                 },
+#                 {
+#                   "node": {
+#                     "title": "The Multi-location Snowboard"
+#                   }
+#                 },
+#                 {
+#                   "node": {
+#                     "title": "The Compare at Price Snowboard"
+#                   }
+#                 },
+#                 {
+#                   "node": {
+#                     "title": "The Collection Snowboard: Hydrogen"
+#                   }
+#                 }
+#               ]
+#             }
+#           }
+#         }
+#       ]
+#     }
+#   },
+#   "extensions": {
+#     "cost": {
+#       "requestedQueryCost": 8,
+#       "actualQueryCost": 7,
+#       "throttleStatus": {
+#         "maximumAvailable": 2000,
+#         "currentlyAvailable": 1966,
+#         "restoreRate": 100
+#       }
+#     }
+#   }
+# }

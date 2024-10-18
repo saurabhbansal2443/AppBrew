@@ -1,0 +1,222 @@
+query getAll($first: Int) {
+  products(first: $first) {
+    edges {
+      cursor
+      node {
+        description
+        title 
+        vendor
+        collections(first: 1) {  
+          edges {
+            node {
+              title 
+            }
+          }
+        }
+      }
+    }
+    nodes{
+      id 
+    }
+  }
+}
+
+//Input 
+
+# {
+#   "first": 10
+# }
+
+//output 
+
+# {
+#   "data": {
+#     "products": {
+#       "edges": [
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzMTkwMDg1LCJsYXN0X3ZhbHVlIjoiODExOTM5MzE5MDA4NSJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Videographer Snowboard",
+#             "vendor": "getKart007",
+#             "collections": {
+#               "edges": []
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzMjIyODUzLCJsYXN0X3ZhbHVlIjoiODExOTM5MzIyMjg1MyJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Minimal Snowboard",
+#             "vendor": "getKart007",
+#             "collections": {
+#               "edges": [
+#                 {
+#                   "node": {
+#                     "title": "Home page"
+#                   }
+#                 }
+#               ]
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzMjU1NjIxLCJsYXN0X3ZhbHVlIjoiODExOTM5MzI1NTYyMSJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Archived Snowboard",
+#             "vendor": "Snowboard Vendor",
+#             "collections": {
+#               "edges": [
+#                 {
+#                   "node": {
+#                     "title": "Automated Collection"
+#                   }
+#                 }
+#               ]
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzMjg4Mzg5LCJsYXN0X3ZhbHVlIjoiODExOTM5MzI4ODM4OSJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Draft Snowboard",
+#             "vendor": "Snowboard Vendor",
+#             "collections": {
+#               "edges": []
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzMzUzOTI1LCJsYXN0X3ZhbHVlIjoiODExOTM5MzM1MzkyNSJ9",
+#           "node": {
+#             "description": "This PREMIUM snowboard is so SUPERDUPER awesome!",
+#             "title": "The Complete Snowboard",
+#             "vendor": "Snowboard Vendor",
+#             "collections": {
+#               "edges": [
+#                 {
+#                   "node": {
+#                     "title": "Automated Collection"
+#                   }
+#                 }
+#               ]
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzMzg2NjkzLCJsYXN0X3ZhbHVlIjoiODExOTM5MzM4NjY5MyJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Out of Stock Snowboard",
+#             "vendor": "getKart007",
+#             "collections": {
+#               "edges": []
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzNDE5NDYxLCJsYXN0X3ZhbHVlIjoiODExOTM5MzQxOTQ2MSJ9",
+#           "node": {
+#             "description": "This is a gift card for the store",
+#             "title": "Gift Card",
+#             "vendor": "Snowboard Vendor",
+#             "collections": {
+#               "edges": []
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzNDUyMjI5LCJsYXN0X3ZhbHVlIjoiODExOTM5MzQ1MjIyOSJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Hidden Snowboard",
+#             "vendor": "Snowboard Vendor",
+#             "collections": {
+#               "edges": [
+#                 {
+#                   "node": {
+#                     "title": "Automated Collection"
+#                   }
+#                 }
+#               ]
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzNDg0OTk3LCJsYXN0X3ZhbHVlIjoiODExOTM5MzQ4NDk5NyJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Collection Snowboard: Hydrogen",
+#             "vendor": "Hydrogen Vendor",
+#             "collections": {
+#               "edges": [
+#                 {
+#                   "node": {
+#                     "title": "Automated Collection"
+#                   }
+#                 }
+#               ]
+#             }
+#           }
+#         },
+#         {
+#           "cursor": "eyJsYXN0X2lkIjo4MTE5MzkzNTE3NzY1LCJsYXN0X3ZhbHVlIjoiODExOTM5MzUxNzc2NSJ9",
+#           "node": {
+#             "description": "",
+#             "title": "The Inventory Not Tracked Snowboard",
+#             "vendor": "getKart007",
+#             "collections": {
+#               "edges": []
+#             }
+#           }
+#         }
+#       ],
+#       "nodes": [
+#         {
+#           "id": "gid://shopify/Product/8119393190085"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393222853"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393255621"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393288389"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393353925"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393386693"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393419461"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393452229"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393484997"
+#         },
+#         {
+#           "id": "gid://shopify/Product/8119393517765"
+#         }
+#       ]
+#     }
+#   },
+#   "extensions": {
+#     "cost": {
+#       "requestedQueryCost": 22,
+#       "actualQueryCost": 22,
+#       "throttleStatus": {
+#         "maximumAvailable": 2000,
+#         "currentlyAvailable": 1978,
+#         "restoreRate": 100
+#       }
+#     }
+#   }
+# }
